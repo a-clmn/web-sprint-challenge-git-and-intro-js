@@ -219,7 +219,7 @@ console.log(artists[2].bio)
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-console.log(artists[10].name = {name: "Vincent Van Gogh"})
+console.log("Task 2", artists[8].name = "Vincent Van Gogh")
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -246,7 +246,7 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(array,) {
+function listOfNames(array) {
 let newArray = (array).map(({name}) => name);
  return newArray;
 }
@@ -303,11 +303,19 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+let newArray = [...array];
+let index = 0
+for (let i = 0; i < newArray.length; i++) { 
+ if (array[i].paintings > 100) {
+  newArray[index] = array[i].name;
+  index++;
+   }
+  }
+  return newArray.slice(0, 14)
 }
 
-
+console.log("Task 7", lotsOfArt(artists))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
@@ -319,11 +327,15 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistInfo(array, nameArtist){
+  for (let i = 0; i < array.length; i++) { 
+    if (array[i].name === nameArtist) {
+     return array[i].bio;
+      }
+     }
 }
 
-
+console.log("Task 8", artistInfo(artists, 'Frida Kahlo'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -335,11 +347,22 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array, nationalityArtist){
+//  let newArray = [...array];
+  let index = 0
+  for (let i = 0; i < array.length; i++) { 
+   if (array[i].nationality === nationalityArtist) {
+    array[index] = array[i].name;
+    index++;
+     }
+    else {
+      
+    }
+  }
+  return array.slice(0, 4)
 }
 
-
+console.log("Task 9", artistByCountry(artists, "Spanish"))
 
 /* ***** END OF TASKS ***** */
 
