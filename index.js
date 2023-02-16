@@ -355,11 +355,8 @@ function artistByCountry(array, nationalityArtist){
     array[index] = array[i].name;
     index++;
      }
-    else {
-      
-    }
   }
-  return array.slice(0, 4)
+  return array.splice(0, index)
 }
 
 console.log("Task 9", artistByCountry(artists, "Spanish"))
